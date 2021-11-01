@@ -4,10 +4,7 @@
 > ### Contents :-
  >>  1. _Problem Statement_
  >>  2. _Introduction_
- >>  3. _Phases of the Project_
- >>> 3.1. _Phase 1_
- >>> 3.2. _Phase 2_
- >>> 3.3. _Phase 3_
+ >>  3. _Getting Started_
  >>  4. _Scope of Work_ 
  >>  5. _Technologies Used_ 
  >>  6. _Findings and Recommendations_ 
@@ -65,4 +62,87 @@ Power Virtual Agents offers multiple connectors channels to connect the agent wi
 Power Virtual Agents enables you to extend your bot using Microsoft Bot Framework skills. If you have already built and deployed bots in your organization (using Bot Framework pro-code tools) for specific scenarios, you can convert bots to a skill and embed the skill within a Power Virtual Agents bot 
 Microsoft Bot Framework, a software development kit (SDK) that developers can use to build chatbots of any type. This framework underlies all of Microsoft’s chatbot offerings.  Azure Bot Service, a platform as a service (PaaS) offering for creating and running chatbots built on Bot Framework. 
 #### Insert an Image > 
+
+<br>
+
+# Getting Started
+
+The Bot We have built is a bot that uses Azure Resource Group and then retrives Data from the Knowledge base. 
+
+// **TODO: Add info about Creating a resource group.** 
+
+
+To get the Bot up and running in the local development environment we need to install tools called yeoman, bot-builder. Since this is heavily dependent of a specific version of python we need to have python 2.7 installed on our local development area. Once we have installed the required tool i.e. Python 2.7. We can use npm/dotnet tools to create the bot. 
+
+Since we have some experience in working with JavaScript we used **npm** to build our bot. 
+
+To install yeoman and bot builder we need to run the following command 
+
+```
+
+//Make a Directory to Store and Test Bots
+$ mkdir myJsBots
+
+//Navigate to that Directory
+$ cd myJsBots
+
+//Install latest version of npm
+$ npm install -g npm
+
+//Install generator bot Builder
+$ npm install -g generator-botbuilder 
+
+//(Optional) If you are using a windows device, then run the following command.
+$ npm install -g windows-build-tools
+
+//Install Yeoman for Generate and Interact with the Bots
+$ npm install -g yo
+
+```
+
+To Create the Bot using Bot Builder we need to use the help of Yeo. 
+
+Run the following command to trigger the creation of Bot
+```
+$ yo botbuilder
+
+```
+When the Command is Executed, a process runs into creating the bot. The Bot requires a few information from the user that is asked by Yeoman and they are : 
+
+
+```
+//What do we want to name our chatbot
+
+? What's the name of your bot? my-chat-bot
+
+//What are the core functionalities of out chatbot 
+
+? What will your bot do? Demonstrate the core capabilities of the Microsoft Bot Framework
+
+/* Language of our chatbot sourcecode: We can either use Javascript or Typescript. 
+Since we were familiar with Javascript,we choose Javascript. */
+
+? What programming language do you want to use? JavaScript
+
+// The Botbuilder bot enables us to build 3 type of Bot 
+// 1. Echo-Bot 
+// 2. Core-Bot
+// 3. Empty-Bot
+
+/* Since we were Creating a bot that answers questions from our knowledge base 
+we are going to select the Core-Bot option */
+
+? Which template would you like to start with? Core-Bot
+
+/* A final confirmation is prompted to create a bot and once "Yes" is typed,
+we have our boiler plate code that contains the bot source code. */
+
+? Looking good.  Shall I go ahead and create your new bot? Yes
+```
+
+Once out Bot is Created we get access to our Bot Source Code. 
+
+The Architecture we are following is : 
+
+![](./images/qnajs.png)
 
